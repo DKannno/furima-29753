@@ -16,7 +16,7 @@
 ## items テーブル
 |Column          | Type     |Options                      |
 | -------------  | ---------| --------------------------- |
-|item_name       |string    |null: false                  |
+|name            |string    |null: false                  |
 |description     |text      |null: false                  |
 |condition_id    |integer   |null: false                  |
 |postage_id      |integer   |null: false                  |
