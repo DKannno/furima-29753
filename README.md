@@ -46,8 +46,8 @@
 |postal_code   | string     |null:false,                |
 |prefectures_id| integer    |null:false,foreign_key:true|
 |city          | string     |null:false                 |
-|house_number  | string    |null:false                 |
+|house_number  | string     |null:false                 |
 |building_name | string     |                           |
-|pone_number   | integer    |null:false                 |
+|pone_number   | string     |null:false                 |
 ### Association
 - has_one :purchase
