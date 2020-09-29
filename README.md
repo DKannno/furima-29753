@@ -43,7 +43,7 @@
 ##  addresses　テーブル
 |Column       | Type     |Options                      |
 | --------    | ---------  | ------------------------- |
-|postal_code  | integer    |null:false,                |
+|postal_code  | string     |null:false,                |
 |prefectures  | string     |null:false,foreign_key:true|
 |city         | string     |null:false                 |
 |house_number | integer    |null:false                 |
