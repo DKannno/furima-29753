@@ -14,13 +14,17 @@
 - has_many : purchases
 
 ## items テーブル
-|Column      | Type     |Options                      |
-| --------   | ---------| --------------------------- |
-|item_name   |string    |null: false                  |
-|description |text      |null: false                  |
-|detail      |references|null:false, foreign_key:true |
-|price       |integer   |null: false                  |
-|user_id     |references|null: false, foreign_key:true|
+|Column          | Type     |Options                      |
+| -------------  | ---------| --------------------------- |
+|item_name       |string    |null: false                  |
+|description     |text      |null: false                  |
+|condition_id    |integer   |null: false                  |
+|postage_id      |integer   |null: false                  |
+|prefecture_id   |integer   |null: false                  |
+|handling_time_id|integer   |null: false                  |
+|category_id     |integer   |null: false                  |
+|price           |integer   |null: false                  |
+|user_id         |references|null: false, foreign_key:true|
 ### Association
 - belongs_to :user
 - has_one :purchase
