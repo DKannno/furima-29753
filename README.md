@@ -50,4 +50,4 @@
 |building_name | string     |                           |
 |pone_number   | string     |null:false                 |
 ### Association
-- has_one :purchase
+- belongs_to :purchase
