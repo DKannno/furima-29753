@@ -18,7 +18,6 @@
 | --------   | ---------| --------------------------- |
 |item_name   |string    |null: false                  |
 |description |text      |null: false                  |
-|item_img    |references|null: false, foreign_key:true|
 |detail      |references|null:false, foreign_key:true |
 |price       |integer   |null: false                  |
 |user_id     |references|null: false, foreign_key:true|
