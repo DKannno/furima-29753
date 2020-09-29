@@ -41,13 +41,13 @@
 - belongs_to :address
 
 ##  addresses　テーブル
-|Column       | Type     |Options                      |
-| --------    | ---------  | ------------------------- |
-|postal_code  | string     |null:false,                |
-|prefectures  | string     |null:false,foreign_key:true|
-|city         | string     |null:false                 |
-|house_number | integer    |null:false                 |
-|building_name| string     |                           |
-|pone_number  | integer    |null:false                 |
+|Column        | Type     |Options                      |
+| ------------ | ---------  | ------------------------- |
+|postal_code   | string     |null:false,                |
+|prefectures_id| integer    |null:false,foreign_key:true|
+|city          | string     |null:false                 |
+|house_number  | integer    |null:false                 |
+|building_name | string     |                           |
+|pone_number   | integer    |null:false                 |
 ### Association
 - has_one :purchase
