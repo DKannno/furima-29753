@@ -1,4 +1,4 @@
-#　テーブル設計
+#  テーブル設計
 
 ## users テーブル
 |Column         | Type     |Options     |
@@ -31,7 +31,7 @@
 - belongs_to :user
 - has_one    :purchase
 
-##　 purchases テーブル
+##  purchases テーブル
 |Column      | Type     |Options                      |
 | --------   | ---------  | ------------------------- |
 | item       | references |null:false,foreign_key:true|
@@ -41,7 +41,7 @@
 - belongs_to :item
 - has_one    :address
 
-##  addresses　テーブル
+##  addresses  テーブル
 |Column        | Type     |Options                      |
 | ------------ | ---------  | ------------------------- |
 |postal_code   | string     |null:false                 |
