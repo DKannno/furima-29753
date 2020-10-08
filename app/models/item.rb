@@ -15,6 +15,10 @@ class Item < ApplicationRecord
   validates :postage
   validates :prefecture
   validates :handling_time
+  validates :image
+  validates :price, format: { with: /\d/}, numericality: {
+    greater_than_or_equal_to: 300,
+    less_than: 9999999 }
   end
 
   with_options numericality: { other_than: 1 } do
