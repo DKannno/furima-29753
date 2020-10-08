@@ -10,15 +10,17 @@ class Item < ApplicationRecord
   belongs_to_active_hash :handling_time
 
   with_options presence: true do
-  validates :category
-  validates :condition
-  validates :postage
-  validates :prefecture
-  validates :handling_time
-  validates :image
-  validates :price, format: { with: /\d/}, numericality: {
-    greater_than_or_equal_to: 300,
-    less_than: 9999999 }
+    validates :name
+    validates :description
+    validates :category
+    validates :condition
+    validates :postage
+    validates :prefecture
+    validates :handling_time
+    validates :image
+    validates :price, format: { with: /\d/}, numericality: {
+      greater_than_or_equal_to: 300,
+      less_than: 9999999 }
   end
 
   with_options numericality: { other_than: 1 } do
