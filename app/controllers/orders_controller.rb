@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :move_to_signed_in, only: [:index]
+  before_action :move_to_signed_in, only: [:index,]
+
 
   def index
     @item = Item.find(params[:item_id])
@@ -43,6 +44,10 @@ class OrdersController < ApplicationController
   end
   
   def move_to_signed_in
+    @item = Item.find(params[:item_id])
+    if user_signed_in? && current_user.id == @item.user_id
+      redirect_to   root_path
+    end
     unless user_signed_in?
       redirect_to   new_user_session_path
     end
