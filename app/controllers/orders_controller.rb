@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :move_to_signed_in, only: [:index,]
-
+  before_action :move_to_signed_in, only: [:index ]
+  before_action :soldout_item_move_root, only: [:index ]
 
   def index
     @item = Item.find(params[:item_id])
@@ -50,6 +50,13 @@ class OrdersController < ApplicationController
     end
     unless user_signed_in?
       redirect_to   new_user_session_path
+    end
+  end
+
+  def soldout_item_move_root
+    @item = Item.find(params[:item_id])
+    unless @item.order.nil?
+      redirect_to root_path
     end
   end
 
