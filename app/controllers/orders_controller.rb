@@ -1,20 +1,17 @@
 class OrdersController < ApplicationController
   before_action :move_to_signed_in, only: [:index ]
   before_action :soldout_item_move_root, only: [:index ]
+  before_action :set_item, only:[:index,:create]
 
   def index
-    @item = Item.find(params[:item_id])
     @order_address =OrderAddress.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_address =OrderAddress.new(order_params)
-    # binding.pry
     if @order_address.valid?
       pay_item
       @order_address.save
-    # binding.pry
       return redirect_to root_path
     else
       render 'index'
@@ -23,16 +20,10 @@ class OrdersController < ApplicationController
 
 
   private
-
-  # def set_item
-  #   @item = Item.find(params[:item_id])
-  # end
-
-   
+ 
   def order_params 
     params.require(:order_address).permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number,:orders_id ).merge(token: params[:token],item_id: params[:item_id],user_id: current_user.id)
   end
-
 
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
@@ -58,6 +49,10 @@ class OrdersController < ApplicationController
     unless @item.order.nil?
       redirect_to root_path
     end
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end
